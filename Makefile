@@ -5,13 +5,13 @@ LDFLAGS = -melf_i386
 OBJS = loader.o kernel.o
 
 %.o: %.cpp
-	g++ $(CFLAGS) -o $@ -c $<
+	x86_64-elf-g++ $(CFLAGS) -o $@ -c $<
 
 %.o: %.s
-	as $(ASFLAGS) -o $@ $<
+	x86_64-elf-as $(ASFLAGS) -o $@ $<
 
 mykernel.bin: linker.ld $(OBJS)
-	ld $(LDFLAGS) -T $< -o $@ $(OBJS)
+	x86_64-elf-ld $(LDFLAGS) -T $< -o $@ $(OBJS)
 
 install: mykernel.bin
 	sudo cp $< /boot/mykernel.bin

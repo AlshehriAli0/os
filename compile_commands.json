@@ -1,0 +1,12 @@
+[
+  {
+    "directory": "/Users/ali/Developer/os",
+    "command": "g++ -m32 -o kernel.o -c kernel.cpp",
+    "file": "kernel.cpp"
+  },
+  {
+    "directory": "/Users/ali/Developer/os",
+    "command": "as -m32 -o loader.o loader.s",
+    "file": "loader.s"
+  }
+] 
