@@ -32,7 +32,7 @@ qemu: myos.iso
 	qemu-system-i386 -cdrom myos.iso
 
 format:
-	clang-format -i *.cpp
+	clang-format -i *.cpp *.h
 
 clean:
 	rm -f *.o mykernel.bin myos.iso
