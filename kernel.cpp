@@ -1,4 +1,4 @@
-#include "types.h"
+#include "gdt.h"
 
 void printf(const char* str) {
     uint16_t* videoMemory = (uint16_t*)0xb8000;
@@ -19,8 +19,10 @@ extern "C" void callConstructors() {
 };
 
 extern "C" void kernelMain(void* multiboot_struct, uint32_t magic) {
-    printf("Welcome to my custom C++ OS");
+    printf("Welcome to my custom C++ OS, AOS");
 
-    while (1) {
-    }
+    GlobalDescriptorTable gdt;
+
+    while (1)
+        ;
 }

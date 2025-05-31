@@ -2,7 +2,7 @@ CFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptio
 ASFLAGS = --32
 LDFLAGS = -melf_i386
 
-OBJS = loader.o kernel.o
+OBJS = loader.o gdt.o kernel.o
 
 %.o: %.cpp
 	x86_64-elf-g++ $(CFLAGS) -o $@ -c $<
@@ -38,4 +38,6 @@ clean:
 	rm -f *.o mykernel.bin myos.iso
 	rm -rf boot/
 
-.PHONY: install iso qemu format clean
+.PHONY: install iso qemu format clean run
+
+run: qemu
