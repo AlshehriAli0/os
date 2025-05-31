@@ -21,7 +21,7 @@ install: mykernel.bin
 	echo 'set hidden_timeout=0' >> boot/grub/grub.cfg
 	echo '' >> boot/grub/grub.cfg
 	echo 'menuentry "My OS" {' >> boot/grub/grub.cfg
-	echo '    multiboot /mykernel.bin' >> boot/grub/grub.cfg
+	echo '    multiboot /boot/mykernel.bin' >> boot/grub/grub.cfg
 	echo '    boot' >> boot/grub/grub.cfg
 	echo '}' >> boot/grub/grub.cfg
 
@@ -40,4 +40,4 @@ clean:
 
 .PHONY: install iso qemu format clean run
 
-run: qemu
+run: clean install iso qemu

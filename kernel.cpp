@@ -19,7 +19,7 @@ extern "C" void callConstructors() {
 };
 
 extern "C" void kernelMain(void* multiboot_struct, uint32_t magic) {
-    printf("Welcome to my custom C++ OS, AOS");
+    printf("Welcome to my custom C++ OS");
 
     GlobalDescriptorTable gdt;
 
